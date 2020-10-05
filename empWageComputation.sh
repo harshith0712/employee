@@ -1,6 +1,5 @@
 #!/bin/bash -x
 
-
 isPartTime=1
 isFullTime=2
 max_hrs_in_month=100
