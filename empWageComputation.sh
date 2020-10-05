@@ -24,12 +24,12 @@ function WorkingHrs() {
 			;;
 	esac
 }
-	while [[ $totalEmphr -lt $max_hrs_in_month && $totalWorkingDays -lt $numWorkingdays ]]
+	while [[ $totalEmpHr -lt $max_hrs_in_month && $totalWorkingDays -lt $numWorkingDays ]]
 	do
-		((totalWorkingdays+++))
-		empHrs="$( WorkingHrs $((RANDOM%3)) )"
-		totalEmphr=$(($totalEmphr+$empHrs))
+		((totalWorkingDays++))
+		 WorkingHrs $((RANDOM%3))
+		totalEmpHr=$(($totalEmpHr+$empHrs))
 	done
-totalsalary=$(($totalEmphr*$empRatePerHr))
+totalsalary=$(($totalEmpHr*$empRatePerHr))
 
 
