@@ -3,7 +3,7 @@
 
 isPartTime=1
 isFullTime=2
-max_hrs_in_month=10
+max_hrs_in_month=100
 empRatePerHr=20
 numWorkingDays=20
 
