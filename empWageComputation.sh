@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/bin/bash -x
 
-echo "welcome to the employee wage problem"
 
 isPresent=1
 randomCheck=$((RANDOM%2))
@@ -10,6 +9,7 @@ randomCheck=$((RANDOM%2))
 		empRatePerHr=20
 		empHrs=8
 		salary=$(($empHrs*$empRatePerHr))
+		echo $salary
 	else
 		salary=0
 	fi
