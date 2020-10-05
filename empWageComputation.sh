@@ -1,19 +1,14 @@
-#!/bin/bash
+#!/bin/bash -x
 
-echo "welcome to the employee wage problem"
 
-isparttime=1
-isfulltime=2
-emprate=20
-rendomcheck=$((RANDOM%3));
 
-	if [ $isfulltime -eq $randomcheck ]
+isPresent=1
+
+randomCheck=$((RANDOM%2));
+
+	if [ $isPresent -eq $randomCheck ]
 	then
-		emphrs=8
-	elif [ $isparttime -eq $ $randomcheck ]
-	then
-		emphrs=4
+		echo "employee is present"
 	else
-		emphrs=0
+		echo "employee is absent"
 	fi
-salary=$(($emphrs*$emprate))
