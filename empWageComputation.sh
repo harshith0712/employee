@@ -2,14 +2,14 @@
 
 echo "welcome to the employee wage problem"
 
-ispresent=1
-randomcheck=$((RANDOM%2))
+isPresent=1
+randomCheck=$((RANDOM%2))
 
-	if [ $ispresent -eq $randomCheck ];
+	if [ $isPresent -eq $randomCheck ];
 	then
-		emprate=20
-		emphrs=8
-		salary=$(($emphrs*$emprate))
+		empRatePerHr=20
+		empHrs=8
+		salary=$(($empHrs*$empRatePerHr))
 	else
 		salary=0
 	fi
