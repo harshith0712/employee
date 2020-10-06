@@ -1,3 +1,5 @@
+##daily employee wage
+
 #!/bin/bash -x
 
 
