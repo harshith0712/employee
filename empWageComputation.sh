@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #!/bin/bash -x
 
 <<<<<<< HEAD
@@ -109,3 +110,35 @@ randomCheck=$((RANDOM%2))
 	else
 		echo "employee is absent"
 	fi
+=======
+#!/bin/bash -x
+
+isPartTime=1
+isFullTime=2
+max_hrs_in_month=100
+empRatePerHr=20
+numWorkingDays=20
+
+totalEmpHr=0
+totalWorkingDays=0
+
+	while [[ $totalEmpHr -lt $max_hrs_in_month && $totalWorkingDays -lt $numWorkingDays ]]
+	do
+		((totalWorkingDays++))
+      empCheck=$((RANDOM%3))
+
+      case $empCheck in
+          $isFullTime)
+             empHrs=8
+                ;;
+            $isPartTime)
+               empHrs=4
+               ;;
+            *)
+               empHrs=0
+               ;;
+      esac
+		totalEmpHr=$(($totalEmpHr+$empHrs))
+   done
+	totalSalary=$(($totalEmpHr*$empRatePerHr))
+>>>>>>> empWageWhileHrsPerMonth
