@@ -1,272 +1,52 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#!/bin/bash -x
+#!/bin/bash
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-echo "welcome to the employee wage problem"
-=======
->>>>>>> empAttendance-uc
-=======
-## part time employee wage
-=======
-#!/bin/bash -x
-=======
-#!/bin/bash -x
-=======
-#!/bin/bash -x
-=======
-#!/bin/bash -x
+echo "welcome to employee wage computation"
 
-isPartTime=1
-isFullTime=2
-maxHrsInMonth=10
-empRatePerHr=20
-numWorkingDays=20
+attendance=$((RANDOM%2))
+if [ $attendance -eq 1 ]
+then
+	echo "employee is present"
+else
+	echo "employee is absent"
+fi
 
-totalEmpHrs=0
-totalWorkingDays=0
-
-function getWorkingHours() {
-
-         case $1 in
-                $isPartTime)
-                        empHrs=4
-                        ;;
-                $isFullTime)
-                        empHrs=8
-                        ;;
-                *)
-                        empHrs=0
-                        ;;
-        esac
-        echo $empHrs
-}
-
-function calDailyWages() {
-        totalWorkHrs=$1;
-        wages=$(( $totalWorkHrs*$empRatePerHr ))
-        echo $wages;
-}
-
-while [[ $totalEmpHrs -lt $maxHrsInMonth && $totalWorkingDays -lt $numWorkingDays ]]
-do
-        totalWorkingDays=$(($totalWorkingDays+1))
-        empHrs="$( getWorkingHours $((RANDOM%3)) )"
-        totalEmpHrs=$(($totalEmpHrs+$empHrs))
-        empDailyWages[$totalWorkingDays]="$( calDailyWages $empHrs )"
-done
-
-totalSalary="$( calDailyWages $totalEmpHrs )"
-echo "daily wages : " ${empDailyWages[@]}
-echo "All Keys : " ${!empDailyWages[@]}
->>>>>>> empWageInDictionary
-
-
-isPartTime=1
-isFullTime=2
-max_hrs_in_month=100
-empRatePerHr=20
-numWorkingDays=20
+isPartTime=1;
+isFullTime=2;
+maxHrsInMonth=100;
+empRateperHr=20;
+numWorkingDays=20;
 
 totalEmpHr=0
 totalWorkingDays=0
 
-function WorkingHrs() {
+function getWorkingHours () {
 
-	case $1 in
-		$isFullTime)
-			empHrs=8
-			;;
-		$isPartTime)
-			empHrs=4
-			;;
-		*)
-			empHrs=0
-			;;
-	esac
-}
-	while [[ $totalEmpHr -lt $max_hrs_in_month && $totalWorkingDays -lt $numWorkingDays ]]
-	do
-		((totalWorkingDays++))
-		 WorkingHrs $((RANDOM%3))
-		totalEmpHr=$(($totalEmpHr+$empHrs))
-	done
-totalsalary=$(($totalEmpHr*$empRatePerHr))
-
->>>>>>> empWageInFunction
-
-
-isPartTime=1
-isFullTime=2
-empRatePerHr=20
-numWorkingDays=20
-
-	for (( day=1; day<=$numWorkingDays; day++ ))
-	do
-		empCheck=$((RANDOM%3))
-
-   	case $empCheck in
-        	 $isFullTime)
-           	 empHrs=8
-           		 ;;
-         	$isPartTime)
-            	empHrs=4
-            	;;
-         	*)
-            	empHrs=0
-            	;;
-   	esac
-		salary=$(($empHrs*$empRatePerHr))
-		totalSalary=$(($totalSalary+$salary))
-	done
->>>>>>> empWageForMonth
-
-
-isPartTime=1
-isFullTime=2
-empRatePerHr=20
-empCheck=$((RANDOM%3))
-
-	case $empCheck in
-			$isFullTime)
-      		empHrs=8
-				;;
-			$isPartTime)
-      		empHrs=4
-				;;
-			*)
-      		empHrs=0
-				;;
-	esac
-salary=$(($empHrs*$empRatePerHr))
-
->>>>>>> empWageSwitchCase
-
-#!/bin/bash -x
-
-
-isPartTime=1
-isFullTime=2
-empRatePerHr=20
-randomCheck=$((RANDOM%3))
-
-   if [ $isFulTime -eq $randomCheck ]
-   then
-      empHrs=8
-   elif [ $isPartTime -eq $randomCheck ]
-	then
-      empHrs=4
-	else
-		empHrs=0
-   fi
-salary=$(($empHrs*$empRatePerHr))
->>>>>>> parttimeEmpWage
-
-
-isPresent=1
-
-randomCheck=$((RANDOM%2));
-
-	if [ $isPresent -eq $randomCheck ]
-	then
-		echo "employee is present"
-=======
-##daily employee wage
-
-#!/bin/bash -x
-
-
-isPresent=1
-randomCheck=$((RANDOM%2))
-
-	if [ $isPresent -eq $randomCheck ];
-	then
-		empRatePerHr=20
-		empHrs=8
-		salary=$(($empHrs*$empRatePerHr))
-		echo $salary
->>>>>>> dailyEmployeeWage-uc
-	else
-		echo "employee is absent"
-	fi
-=======
-#!/bin/bash -x
-
-isPartTime=1
-isFullTime=2
-max_hrs_in_month=100
-empRatePerHr=20
-numWorkingDays=20
-
-totalEmpHr=0
-totalWorkingDays=0
-
-	while [[ $totalEmpHr -lt $max_hrs_in_month && $totalWorkingDays -lt $numWorkingDays ]]
-	do
-		((totalWorkingDays++))
-      empCheck=$((RANDOM%3))
-
-      case $empCheck in
-          $isFullTime)
-             empHrs=8
-                ;;
-            $isPartTime)
-               empHrs=4
-               ;;
-            *)
-               empHrs=0
-               ;;
-      esac
-		totalEmpHr=$(($totalEmpHr+$empHrs))
-   done
-	totalSalary=$(($totalEmpHr*$empRatePerHr))
->>>>>>> empWageWhileHrsPerMonth
-=======
-isPartTime=1
-isFullTime=2
-maxHrsInMonth=10
-empRatePerHr=20
-numWorkingDays=20
-
-totalEmpHrs=0
-totalWorkingDays=0
-
-function getWorkingHours() {
-
-         case $1 in
-                $isPartTime)
-                        empHrs=4
-                        ;;
+        case $1 in
                 $isFullTime)
-                        empHrs=8
-                        ;;
+                        empHrs=8 ;;
+                $isPartTime)
+                        empHrs=4 ;;
                 *)
-                        empHrs=0
-                        ;;
-        esac
-        echo $empHrs
+                        empHrs=0 ;;
+         esac
+                echo $empHrs
 }
 
-function calDailyWages() {
-        totalWorkHrs=$1;
-        wages=$(( $totalWorkHrs*$empRatePerHr ))
-        echo $wages;
+function caclDailyWage ( ) {
+local empHrs=$1;
+wage=$(($empHrs+$empRateperHr))
+echo $wage
 }
 
-while [[ $totalEmpHrs -lt $maxHrsInMonth && $totalWorkingDays -lt $numWorkingDays ]]
+
+while [[ $totalEmpHr -lt $maxHrsInMonth && $totalWorkingDays -lt $numWorkingDays ]]
 do
-        totalWorkingDays=$(($totalWorkingDays+1))
+        ((totalWorkingDays++))
         empHrs="$( getWorkingHours $((RANDOM%3)) )"
-        totalEmpHrs=$(($totalEmpHrs+$empHrs))
-        empDailyWages[$totalWorkingDays]="$( calDailyWages $empHrs )"
+        totalEmpHr=$(($totalEmpHr+$empHrs))
+        empDailyWage["$totalWorkingDays"]="$( caclDailyWage $empHrs )"
 done
 
-totalSalary="$( calDailyWages $totalEmpHrs )"
-echo "daily wages : " ${empDailyWages[@]}
->>>>>>> empWageInArray
+totalsalary="$( caclDailyWage $totalEmpHr )"
+echo "daily wage" ${empDailyWage[@]}
+echo "all days" ${!empDailyWage[@]}
